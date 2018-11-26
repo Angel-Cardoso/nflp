@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+{% block title %} asientos {% endblock %}
+
+{% block content %}
+<section class="container">
+	<!-- categoria alta -->
+	<div class="jumbotron mt-5">
+		<h1 class="display-4 text-center">CATEGORIA ALTA</h1>
+		<p class="text-justify">Lista de los asientos de alta categoría, para información más detallada, visite el detalle de categoría </p>
+		<a class="btn btn-dark" href="{% url 'categoria_alta_views'%}" role="button">Más información...</a>
+	</div>
+	<table class="table table-strip">  
+		<th>Numero de Asiento</th>
+		<th>Categoria</th>
+		{% for j in CatAlt %}
+			<tr>
+				<td>{{ j.numero_asiento }} </td>
+				<td>{{j.categoria}}</td>
+				<td>{{ j.estadio }}</td>
+			</tr>			
+		{% endfor %}
+	</table> 
+
+	<!-- categoria media -->
+	<div class="jumbotron">
+		<h1 class="display-4 text-center">CATEGORIA MEDIA</h1>
+		<p class="text-justify">Lista de los asientos de media categoría, para información más detallada, visite el detalle de categoría </p>
+		<a class="btn btn-dark" href="{% url 'categoria_media_views'%}" role="button">Más información...</a>
+	</div>
+	<table class="table table-strip">  
+		<th>Numero de Asiento</th>
+		<th>Categoria</th>
+		{% for j in CatMed %}
+			<tr>
+				<td>{{ j.numero_asiento }} </td>
+				<td>{{j.categoria}}</td>
+				<td>{{ j.estadio }}</td>			
+		{% endfor %}
+	</table> 
+
+	<!-- categoria baja -->
+	<div class="jumbotron">
+		<h1 class="display-4 text-center">CATEGORIA BAJA</h1>
+		<p class="text-justify">Lista de los asientos de baja categoría, para información más detallada, visite el detalle de categoría </p>
+		<a class="btn btn-dark" href="{% url 'categoria_baja_views'%}" role="button">Más información...</a>
+	</div>
+	<table class="table table-strip">  
+		<th>Numero de Asiento</th>
+		<th>Categoria</th>
+		{% for j in CatBaj %}
+			<tr>
+				<td>{{ j.numero_asiento }} </td>
+				<td>{{j.categoria}}</td>
+				<td>{{ j.estadio }}</td>			
+		{% endfor %}
+	</table>
+</section> 
+{% endblock %}

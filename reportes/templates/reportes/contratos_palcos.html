@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block title %} Contratos de Palcos {% endblock %}
+
+{% block content %}
+	<table class="table table-strip">
+		<th>Palco</th>
+		<th>Dueño</th>
+		<th>Años de contrato</th>
+		<th>Precio</th>
+		{% for j in Contratos_Palcos %}
+			<tr>
+				<td>{{ j.numero_palco}} </td>
+				<td>{{ j.nombre_fanatico }}</td>
+				<td>{{ j.years_renta}} </td>
+				<td>{{ j.precio_total}} </td>
+			</tr>			
+		{% endfor %}
+	</table>      
+{% endblock %}

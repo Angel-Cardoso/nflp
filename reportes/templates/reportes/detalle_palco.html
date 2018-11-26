@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block title %} detalle de palco {% endblock %}
+
+{% block content %}
+<section class="container">
+	<div>
+		<h1 class="text-center">Palco {{palco.numero_palco}}</h1>
+		<p class="text-justify">Categoria: {{palco.categoria}}</p>
+		<p class="text-justify">Dueño actual: {{rentero.nombre_fanatico}}</p>
+	</div>
+
+	<table class="table table-strip">  
+		<th class="text-justify">Numero de Asientos: {{palco.cantidad_asientos}}</th>
+		{% for j in asientos %}
+			<tr>
+				<td class="text-justify">ID de asiento: {{ j.numero_asiento }} </td>
+			</tr>			
+		{% endfor %}
+	</table>
+	<div>
+<!-- 		{% if rentero.nombre_fanatico != 'disponible' %}
+			<a class = "btn btn-primary" href="#">Prueba loca</a>
+		{% endif %} -->
+	</div>
+
+</section>
+{% endblock %}

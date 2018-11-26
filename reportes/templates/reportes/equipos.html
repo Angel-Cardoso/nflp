@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block title %} index {% endblock %}
+
+{% block content %}
+	<table class="table table-strip">
+		<th>Equipo</th>
+		<th>Foto</th>
+		{% for j in Equipos %}
+			<tr>
+				<td>{{ j.nombre_equipo }} </td>
+				<td>{{ j.foto_equipo }}</td>
+				<td><a href="{% url 'detalle_equipo_views' j.id %}" class="btn btn-dark">Detalle</a></td>
+			</tr>
+			
+		{% endfor %}
+	</table>      
+{% endblock %}

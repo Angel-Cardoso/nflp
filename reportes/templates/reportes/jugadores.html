@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block title %} jugadores {% endblock %}
+
+{% block content %}
+	<table class="table table-strip">
+		<th>Jugador</th>
+		<th>Equipo</th>
+		{% for j in Jugadores %}
+			<tr>
+				<td>{{ j.nombre_jugador }} </td>
+				<td>{{ j.equipo }}</td>
+				<td><a href="{% url 'detalle_jugador_views' j.id %}" class="btn btn-dark">Detalle</a></td>
+			</tr>
+			
+		{% endfor %}
+	</table>      
+{% endblock %}

@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block title %} detalle_fanatico {% endblock %}
+
+{% block content %}
+<section class="container">
+	<div>
+		<h1 class="text-center">{{Fanatico.nombre_fanatico}}</h1>
+		<p class="text-justify">Fecha de nacimiento: {{Fanatico.fecha_nacimiento}}</p>
+		<p class="text-justify">Edad: {{Fanatico.edad}}</p>
+		<P class = "text-justify">Telefono Celular: {{Fanatico.numero_cel}}</P>
+		<p class="text-justify">Equipo Favorito: {{Fanatico.equipo_fanatico}}</p>
+	</div>
+</section>
+{% endblock %}

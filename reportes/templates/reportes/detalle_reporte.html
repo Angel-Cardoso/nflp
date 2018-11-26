@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block title %} detalle reporte {% endblock %}
+
+{% block content %}
+<section class="container">
+	<div>
+		<h1 class="text-center">Numero de reporte: {{Reporte.id}}</h1>
+		<p class="text-justify">Fecha de creacion: {{Reporte.fecha_registro}}</p>
+		<p class="text-justify">Asiento: {{Reporte.numero_asiento}}</p>
+		<P class = "text-justify">Elaboró: {{Reporte.nombre_fanatico}}</P>
+		<p class="text-justify">Contenido: {{Reporte.descripcion}}</p>
+	</div>
+</section>
+{% endblock %}

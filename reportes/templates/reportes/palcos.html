@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+{% block title %} Palcos {% endblock %}
+
+{% block content %}
+<section>
+	<div>
+		<h1>Palcos Disponibles</h1>
+	</div>
+		<table class="table table-strip">
+			<th>Palco</th>
+			<th>Categoria</th>
+			<th>No. de asientos</th>
+			{% for j in Palcos %}
+				{% if j.estado == 'disponible'%}
+					<tr>
+						<td>{{ j.numero_palco}} </td>
+						<td>{{ j.categoria }}</td>
+						<td>{{ j.cantidad_asientos }}</td>
+						
+					</tr>
+				{% endif %}			
+			{% endfor %}
+		</table>
+	<div>
+		<h1>Palcos Ocupados</h1>
+	</div>  
+	<table class="table table-strip">
+			<th>Palco</th>
+			<th>Categoria</th>
+			<th>No. de asientos</th>
+			{% for j in Palcos %}
+				{% if j.estado == 'ocupado'%}
+					<tr>
+						<td>{{ j.numero_palco}} </td>
+						<td>{{ j.categoria }}</td>
+						<td>{{ j.cantidad_asientos }}</td>
+						<td><a href="{% url 'detalle_palco_views' j.id %}" class="btn btn-dark">Detalle</a></td>
+					</tr>
+				{% endif %}			
+			{% endfor %}
+		</table> 
+</section>   
+{% endblock %}

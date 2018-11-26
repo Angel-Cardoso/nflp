@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block title %} actualizar fanatico {% endblock %}
+
+{% block content %}   
+	<form method="post">
+		<section class="container mt-3">
+			{% csrf_token %}
+			<h1 class="text-center">Actualizacion</h1>
+			<p>Nombre fanatico: {{form.nombre_fanatico}}</p>
+			<p>Fecha de nacimiento: {{form.fecha_nacimiento}}</p>
+			<p>Equipo favorito: {{form.equipo_fanatico}}</p>
+			<p>Edad: {{form.edad}}</p>
+			<p>Numero Celular: {{form.numero_cel}}</p>
+			<p>Tiene palco: {{form.palco}}</p>
+			<!-- <p>Numero de Palco: {{form.numero_palco}}</p>
+			<p>Nombre del fanatico: {{form.nombre_fanatico}}</p>
+			<p>Duración del contrato (años): {{form.years_renta}}</p> -->
+			<button type="submit" class="btn btn-primary">Actualizar</button>
+		</section>	
+	</form>  
+{% endblock %}

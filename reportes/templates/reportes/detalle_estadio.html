@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block title %} detalle_estadio {% endblock %}
+
+{% block content %}
+<section class="container">
+	<div>
+		<h1 class="text-center">{{Detalle.nombre_estadio}}</h1>
+		<p class="text-justify">Fecha de creacion: {{Detalle.fecha_construccion}}</p>
+		<p class="text-justify">Direccion: {{Detalle.direccion}}</p>
+		<P class = "text-justify">Propietario: {{Detalle.propietario}}</P>
+	</div>
+</section> 
+{% endblock %}

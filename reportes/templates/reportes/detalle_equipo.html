@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block title %} index {% endblock %}
+
+{% block content %}
+<section class="container">
+	<div>
+		<h1 class="text-center">{{Detalle.nombre_equipo}}</h1>
+		<p class="text-justify">Fecha de creacion: {{Detalle.fecha_creacion}}</p>
+		<p class="text-justify">Fundador: {{Detalle.fundador}}</p>
+		<P class = "text-justify">Director: {{Detalle.director}}</P>
+	</div>
+</section> 
+{% endblock %}

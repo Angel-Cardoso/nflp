@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% block title %} fanaticos {% endblock %}
+
+{% block content %}
+
+<form method="GET" action="{% url 'fanaticos_views'%}">
+	<input type="text" name="q" placeholder="Buscar...">
+	<button type="submit" class="btn btn-dark">GO!</button>
+	
+</form>
+<section class="container">
+	<div class="mt-5">
+		<a href="{% url 'fanaticos_views' %}" class="btn btn-dark">General</a>
+		<a href="{% url 'fanaticos_vip_views' %}" class="btn btn-dark" >VIP</a>
+	</div>
+	<table class="table table-strip mt-5">
+		<th>Nombre</th>
+		<th>Equipo Favorito</th>
+		<th>Palco</th>
+		<th>asdcc</th>
+		<th>casc</th>
+		{% for j in object_list %}
+			<tr>
+				<td>{{ j.nombre_fanatico }} </td>
+				<td>{{ j.equipo_fanatico }}</td>
+				<td>{{ j.palco }}</td>
+				<td><a href="{% url 'detalle_fanatico_views' j.id %}" class="btn btn-dark">Detalle</a></td>
+				<td><a href="{% url 'actualizar_fanatico_views' j.id %}" class="btn btn-dark">Actualizar</a></td>
+			</tr>
+
+			{% empty %}
+			{% if request.GET.q %}
+				No se entontro fanatico
+			{% else %}
+				No hay datos
+			{% endif %}
+		{% endfor %}
+	</table>  
+
+</section>
+{% endblock %}

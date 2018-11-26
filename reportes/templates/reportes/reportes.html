@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block title %} reportes {% endblock %}
+
+{% block content %}
+	<table class="table table-strip">
+		<th>Fanatico</th>
+		<th>Fecha de reporte</th>
+		{% for j in object_list %}
+			<tr>
+				<td>{{ j.nombre_fanatico}} </td>
+				<td>{{ j.fecha_registro }}</td>
+				<td><a href="{% url 'detalle_reporte_views' j.id %}" class="btn btn-dark">Detalle</a></td>
+			</tr>
+			
+		{% endfor %}
+	</table>      
+{% endblock %}

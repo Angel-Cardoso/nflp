@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block title %} crear reporte {% endblock %}
+
+{% block content %}   
+	<form method="post">
+		<section class="container mt-3">
+			{% csrf_token %}
+			<h1>Reporte del dia</h1>
+			<p>Fanatico: {{form.nombre_fanatico}}</p>
+			<p>Numero de Asiento: {{form.numero_asiento}}</p>
+			<p>Descripción: {{form.descripcion}}</p>
+			<button type="submit" class="btn btn-primary">Registrar</button>
+		</section>	
+	</form>  
+{% endblock %}

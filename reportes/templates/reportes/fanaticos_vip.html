@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block title %} VIP {% endblock %}
+
+{% block content %}
+<section class="container">
+	<div class="mt-5">
+		<a class="btn btn-dark" href="{% url 'fanaticos_views'%}" role="button">General</a>
+		<a class="btn btn-dark" href="{% url 'fanaticos_vip_views'%}" role="button">VIP</a>
+	</div>
+	<table class="table table-strip mt-5">
+		<th>Nombre</th>
+		<th>Equipo Favorito</th>
+		{% for j in Fanaticos %}
+			<tr>
+				<td>{{ j.nombre_fanatico }} </td>
+				<td>{{ j.equipo_fanatico }}</td>
+				<td><a href="{% url 'detalle_fanatico_views' j.id %}" class="btn btn-dark">Detalle</a></td>
+			</tr>
+		{% endfor %}
+	</table>  
+</section>
+{% endblock %}
